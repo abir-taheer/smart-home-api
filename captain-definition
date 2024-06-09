@@ -2,8 +2,8 @@
   "schemaVersion": 2,
   "dockerfileLines": [
     "FROM library/node:22-alpine3.19",
-    "RUN apk update && apk upgrade && apk add --no-cache git",
-    "RUN mkdir -p /usr/src/app",
+    "WORKDIR /usr/app",
+    "COPY ./ /usr/app",
     "RUN npm install",
     "ENV PORT 80",
     "EXPOSE 80",
