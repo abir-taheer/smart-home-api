@@ -4,7 +4,7 @@
     "FROM library/node:22-alpine3.19",
     "RUN apk update && apk upgrade && apk add --no-cache git",
     "RUN mkdir -p /usr/src/app",
-    "RUN npm install --production && npm cache clean --force && npm run build --if-present",
+    "RUN npm install",
     "ENV PORT 80",
     "EXPOSE 80",
     "CMD [ \"npm\", \"start\" ]"
